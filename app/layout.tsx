@@ -16,7 +16,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <title>Project Manager</title>
+      <body className={`${inter.className} bg-slate-800`}>{children}</body>
     </html>
   );
 }
