@@ -1,5 +1,6 @@
 "use client"
 import { useEffect, useState } from "react"
+import Columns from "../components/columns/columns";
 
 interface T {
     id: string;
@@ -21,13 +22,11 @@ export default function Board() {
     }, [])
     return <>
 
-        <div className="flex flex-row gap-x-8">
-            {cols.map(col => <div key={col.id}
-                className="w-48 text-white border border-sky-500"
-                draggable
-                onDrag={(event) => { }}
-                onDragOver={() => { }}
-            >{col.name}</div>)}
+        <div className="flex flex-row gap-x-8 overflow-x-scroll pl-4 pr-8 border-box overflow-y-hidden px-12 py-12 h-screen">
+            {cols.map(col => <Columns
+                key={col.id}
+                col={col}
+            />)}
         </div>
     </>
 }
